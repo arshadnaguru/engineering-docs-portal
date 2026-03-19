@@ -36,21 +36,60 @@ nav:
       - Setting Up a Python ML Environment: tutorials/python-ml-setup.md
       - Containerizing a FastAPI App with Docker: tutorials/docker-fastapi.md
       - Getting Started with Git for Documentation: tutorials/git-for-docs.md
+      - Setting Up a VR Development Environment: tutorials/vr-dev-environment.md
+      - Building a REST API with FastAPI: tutorials/fastapi-rest-api.md
+      - Getting Started with OpenCV: tutorials/opencv-getting-started.md
+      - Setting Up MySQL for a Project: tutorials/mysql-setup.md
+      - Motion Capture Data Processing: tutorials/mocap-data-processing.md
+      - Building a Data Dashboard with Streamlit: tutorials/streamlit-dashboard.md
+      - Image Classification with PyTorch: tutorials/pytorch-image-classification.md
+      - Setting Up CI/CD with GitHub Actions: tutorials/github-actions-cicd.md
+      - Getting Started with Unity for VR: tutorials/unity-vr-basics.md
+      - Working with Geospatial Data in Python: tutorials/geospatial-data-python.md
+      - Data Visualization with Matplotlib: tutorials/data-visualization-matplotlib.md
   - How-To Guides:
       - how-to/index.md
       - Deploy a Dockerized Application on Linux: how-to/docker-deploy-linux.md
       - Format Raw Notes into Structured Markdown: how-to/format-notes-markdown.md
       - Set Up a Documentation Review Workflow: how-to/doc-review-workflow.md
+      - Export and Clean Motion Capture Data: how-to/export-clean-mocap-data.md
+      - Set Up a Virtual Production Stage: how-to/virtual-production-setup.md
+      - Configure a Render Farm: how-to/configure-render-farm.md
+      - Back Up and Restore MySQL: how-to/backup-restore-mysql.md
+      - Monitor System Resources on Linux: how-to/monitor-linux-resources.md
+      - Automate Testing with Pytest: how-to/automate-testing-pytest.md
+      - Set Up SSH Keys for Remote Servers: how-to/setup-ssh-keys.md
+      - Manage Python Dependencies: how-to/manage-python-dependencies.md
+      - Create a Data Pipeline with Pandas: how-to/create-data-pipeline-pandas.md
+      - Troubleshoot Common Docker Errors: how-to/troubleshoot-docker-errors.md
+      - Post-Production Export Workflow: how-to/post-production-export-workflow.md
   - Reference:
       - reference/index.md
       - Markdown Style Guide: reference/markdown-style-guide.md
       - API Documentation Template: reference/api-doc-template.md
       - Project Folder Structure: reference/folder-structure.md
+      - Linux Command Cheat Sheet: reference/linux-command-cheatsheet.md
+      - Python Virtual Environment Reference: reference/python-venv-reference.md
+      - Docker CLI Reference: reference/docker-cli-reference.md
+      - Git Command Reference: reference/git-command-reference.md
+      - MySQL Query Reference: reference/mysql-query-reference.md
+      - FastAPI Configuration Reference: reference/fastapi-config-reference.md
+      - Motion Capture File Formats: reference/mocap-file-formats.md
+      - VR Headset Specifications: reference/vr-headset-specs.md
+      - Environment Variables Reference: reference/environment-variables-reference.md
   - Explanation:
       - explanation/index.md
-      - Why Diátaxis?: explanation/why-diataxis.md
+      - "Why Di\xE1taxis?": explanation/why-diataxis.md
       - Docs-as-Code Philosophy: explanation/docs-as-code.md
       - Information Architecture Principles: explanation/information-architecture.md
+      - What Is Version Control?: explanation/what-is-version-control.md
+      - Understanding REST APIs: explanation/understanding-rest-apis.md
+      - Virtual Production Explained: explanation/virtual-production-explained.md
+      - What Is Motion Capture?: explanation/what-is-mocap.md
+      - Understanding Containerization: explanation/understanding-containerization.md
+      - CI/CD Concepts: explanation/cicd-concepts.md
+      - What Is VR/XR?: explanation/what-is-vr-xr.md
+      - Understanding Data Pipelines: explanation/understanding-data-pipelines.md
 
 markdown_extensions:
   - pymdownx.highlight:
