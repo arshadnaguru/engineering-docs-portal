@@ -1,0 +1,75 @@
+site_name: Engineering Documentation Portal
+site_description: A centralized, Diátaxis-structured documentation hub for technical workflows and engineering guides.
+site_author: Arshad Naguru
+repo_url: https://github.com/arshadnaguru/engineering-docs-portal
+repo_name: arshadnaguru/engineering-docs-portal
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+nav:
+  - Home: index.md
+  - Tutorials:
+      - tutorials/index.md
+      - Setting Up a Python ML Environment: tutorials/python-ml-setup.md
+      - Containerizing a FastAPI App with Docker: tutorials/docker-fastapi.md
+      - Getting Started with Git for Documentation: tutorials/git-for-docs.md
+  - How-To Guides:
+      - how-to/index.md
+      - Deploy a Dockerized Application on Linux: how-to/docker-deploy-linux.md
+      - Format Raw Notes into Structured Markdown: how-to/format-notes-markdown.md
+      - Set Up a Documentation Review Workflow: how-to/doc-review-workflow.md
+  - Reference:
+      - reference/index.md
+      - Markdown Style Guide: reference/markdown-style-guide.md
+      - API Documentation Template: reference/api-doc-template.md
+      - Project Folder Structure: reference/folder-structure.md
+  - Explanation:
+      - explanation/index.md
+      - Why Diátaxis?: explanation/why-diataxis.md
+      - Docs-as-Code Philosophy: explanation/docs-as-code.md
+      - Information Architecture Principles: explanation/information-architecture.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - tags
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/arshadnaguru
