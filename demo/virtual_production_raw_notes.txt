@@ -1,0 +1,110 @@
+Virtual Production LED Wall Session Notes
+Date: April 2026
+Engineer: Jake Morrison
+Project: RIT Short Film - Spring Semester
+
+OVERVIEW:
+Today we ran a full virtual production shoot using the LED wall with the Unreal Engine environment. These are my notes from the session for anyone running this setup in the future.
+
+EQUIPMENT USED:
+- ROE Visual LED wall panels (main stage)
+- Brompton Technology LED processor
+- disguise media server
+- Unreal Engine 5.3 on main render node
+- Zero Density Reality Hub for compositing
+- Sony Venice 2 camera with tracking system
+- OptiTrack Prime 13 cameras for camera tracking
+- Ncam camera tracking system
+
+PREREQUISITES:
+- LED wall must be powered on at least 30 minutes before shoot
+- Unreal Engine project must be loaded and tested day before
+- Camera tracking must be calibrated fresh each morning
+- All cables must be checked for damage before powering on
+
+Steps:
+
+1. Power on sequence
+Start with the LED processor first, then the media server, then Unreal render node last. Never power on in reverse order or you risk display artifacts on the panels.
+
+2. Load the Unreal environment
+Open the project on the render node and go to the nDisplay config file. Make sure the viewport resolution matches the LED wall pixel count exactly. Ours is 5760x1620 for the main wall.
+
+3. Camera tracking setup
+Mount the tracking markers on the camera rig. Open the OptiTrack Motive software and confirm all markers are visible. Run a fresh calibration using the calibration wand. Export the calibration to the ncam system.
+
+4. Color calibration
+Run the Brompton StageMaster color calibration tool. This ensures the LED panels display accurate color that matches what the camera sensor captures. Takes about 20 minutes. Do not skip this step.
+
+5. Lens calibration
+For each lens being used today, run the lens calibration procedure in Reality Hub. This corrects for lens distortion in the final composite. Each lens takes about 10 minutes.
+
+6. Test render
+Load a test scene in Unreal and do a full test render to the wall. Walk the camera through the space and check that the parallax is correct - the background should shift naturally as you move the camera. If it looks wrong check the tracking offset values in ncam.
+
+7. Run rehearsal
+Do a full run through with the director before recording. Check exposure settings on the camera. The LED wall brightness should be matched to the camera exposure to avoid blown highlights.
+
+8. Recording
+Record takes in the camera. Also record the Unreal timecode output for matching in post. Use the slate for each take.
+
+9. Data backup
+At end of day back up all camera cards to two separate drives. Back up the Unreal project state. Export the ncam tracking data for each take.
+
+TROUBLESHOOTING:
+
+LED panels showing artifacts or flickering:
+Check the Brompton processor signal input. Usually a cable issue. Also check the refresh rate is set to match the camera frame rate exactly - mismatch causes rolling artifacts.
+
+Camera tracking jumping or drifting:
+Recalibrate the OptiTrack system. Check that no markers have fallen off the camera rig. Make sure no reflective surfaces in the stage are confusing the infrared cameras.
+
+Parallax looks wrong through the lens:
+Check the nodal point offset in the ncam settings. This is usually the issue when the environment doesnt feel right through the lens even though tracking looks correct on the monitor.
+
+Unreal dropping frames:
+Check GPU temperature on the render node. If above 85 degrees the system will throttle. Also check that no other applications are running on the render node during shoot.
+
+Color mismatch between LED wall and camera:
+Redo the Brompton color calibration. Also check the camera white balance is set to match the LED wall color temperature which should be 5600K for daylight scenes.
+
+NOTES FROM TODAY:
+NOTE: always power on LED processor before media server or you get sync errors
+NOTE: color calibration must be redone if LED wall has been off for more than 2 hours
+NOTE: always confirm frame rate match between camera and Unreal before recording
+WARNING: never touch the LED panels directly - oils from skin damage the coating
+WARNING: never exceed 80 percent brightness on LED wall during extended shoots - causes thermal damage
+WARNING: always have a backup Unreal project saved before making any level changes on shoot day
+WARNING: never unplug the tracking cables during a live session - requires full recalibration
+
+POST SESSION CHECKLIST:
+- All camera cards backed up to two drives
+- Unreal project state saved and backed up
+- ncam tracking data exported for all takes
+- LED wall powered down in correct sequence - Unreal first then media server then LED processor
+- All cables coiled and stored properly
+- Tracking markers removed from camera and stored in case
+- Stage swept and cleared for next team
+
+USEFUL COMMANDS:
+
+Check nDisplay status:
+$ UE4Editor.exe MyProject.uproject -nDisplay -dc="configs/ndisplay.cfg"
+
+Export ncam tracking data:
+$ ncam-export --session today --format csv --output /tracking/april2026/
+
+Backup project files:
+$ robocopy "C:\UnrealProjects\RITFilm" "D:\Backup\RITFilm" /E /Z /LOG:backup.log
+
+Check GPU temperature:
+$ nvidia-smi --query-gpu=temperature.gpu --format=csv
+
+Convert recorded footage to ProRes for editing:
+$ ffmpeg -i input.mxf -c:v prores_ks -profile:v 3 -c:a pcm_s24le output.mov
+
+CONTACTS:
+- LED wall technical support: Brompton Technology support portal
+- Unreal nDisplay issues: Epic Games developer forums
+- OptiTrack support: optitrack.com/support
+- Campus AV support: magic-av@rit.edu
