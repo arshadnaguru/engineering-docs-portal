@@ -1,3 +1,4 @@
+Mocap Session Setup Guide
 - Turn on OptiTrack cameras from the power strip
 - Open Motive software on the main workstation
 - Place reflective markers on the suit at all joint positions

@@ -1,4 +1,4 @@
-# - Turn On Optitrack Cameras From The Power Strip
+# Mocap Session Setup Guide
 
 > **Author:** Arshad Naguru · **Last Updated:** April 2026 · **Category:** How To
 
@@ -29,4 +29,4 @@
 
 ---
 
-*Last updated: April 2026 · Author: Arshad Naguru*
+*Last updated: April 2026 · Author: Arshad Naguru · Submit corrections via merge request*
