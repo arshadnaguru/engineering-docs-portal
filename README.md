@@ -58,7 +58,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contribution workflow, branc
 ## Author
 
 **Arshad Naguru** — [an2629@rit.edu](mailto:an2629@rit.edu) · [GitHub](https://github.com/arshadnaguru)
-
-## License
-
-This project is licensed under the MIT License.
